@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1강 -->
+    <!-- <h2 id = "hello">안녕하세요</h2>
+    <h2 id = "hi">올때 메로나</h2> -->
+    
+    <!-- 2 , 3강 -->
+    <div class ="alert-box">
+        <p>Alert 박스</p>
+    <button onclick="push('none')">닫기</button>
+    </div>
+    <button onclick="push('block')">버튼1</button>
+
+    <div class="alert-box2">
+        <p>Alert 박스</p>
+    <button onclick="pushTwo('none')">닫기</button>
+    </div>
+    <button onclick="pushTwo('block')">버튼2</button>
+    <!-- 4강 -->
+    <!-- alert 박스 2개로 만들어지게 하는 숙제 -->
+    <script>
+        // 1강
+        // document.getElementById('hello').innerHTML = '안녕';
+        // document.getElementById('hi').style.fontSize = "30px";
+
+        // 3 , 4 강
+        function push(e) {
+            document.querySelector('.alert-box').style.display = e;
+            if (e === 'block'){
+                document.querySelector('.alert-box :first-child').innerHTML = "아이디 입력";
+            }
+        }
+        function pushTwo(e) {
+            document.querySelector('.alert-box2').style.display = e;
+            if (e === 'block'){
+                document.querySelector('.alert-box2 :first-child').innerHTML = "패스워드 입력";
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+
+<!-- js 애플코딩 유튜브 기초강의
+    1. HTML 조작
+        웹 문서 . id hello인 html요소 가져와 . 내부글자  대입(=) '대입내용';
+        document.getElementById('hello').innerHTML = '안녕';
+                    바꿀 수 있는 속성이 많으니 구글링 해야함    
+
+        = 는 대입 오른쪽 내용을 왼쪽에 넣어달라는 의미
+        ''는 문자를 표현 , 셀렉터 selector 는 getElementById 같은 것
+
+    2. Alert 만들어서 유저 위협하기
+        $표시로 되있는 코드는 jQuery 문법
+    단축키
+        ctrl + ? 하면 주석처리 됨 (ctrl + k + c 방법도 있음 , 해제는 ctrl + k + u)
+        ctrl + e 하면 창 이동 가능
+
+        ui 만드는 법칙
+        1. 미리 디자인해두고 숨김 
+            css에서 display: none;를 이용해서 숨기기 가능
+        2. 버튼 누르거나 하면 보여줌
+            button의 속성에 onclick="js실행코드" 해줄 수 있다
+            <button onclick="document.querySelector('.alert-box').style.display = 'block'">버튼</button>
+ 
+    3. function , 간단버그 찾는방법
+        긴 코드 짧게 만들 때 function을 사용함
+
+        흔한 에러
+            1. ~ 속성 of null
+            변경 할 HTMl 내용이 있는 곳 아래에 JS코드를 작성해줘야 에러없이 잘 작동함(절차지향)
+            of null - 오류나온 속성 왼쪽의 셀렉터등에 찾아지지 않는 경우 등등이 있다
+            (셀렉터에서 오타 또는 셀렉터의 위치를 잘 확인하자)
+
+            2. ~ 함수 is not a function
+            주로 오타임 (대문자 , 소문자 등등)
+
+    4. 파라미터 쓰는 이유
+        parameter
+        실행시 함수명(argument); 를 하면 그 함수에 인자(parameter)의 값이 인수(argument)값으로 들어간다
+        사용하는 이유:함수 하나로 여러 기능 실행가능함
+        여러개의 인수(argument)를 주고 인자(parameter)로 받을 수 있음
+        (호출때 또는 실행요청을 할 떄 보내는 값은 인수(argument), 함수가 실행될 때 받는값은 인자(parameter)이다 )
+
+    5. 이벤트 리스너 (EventListener)
+-->
