@@ -22,13 +22,18 @@
   
     <!-- 4강 -->
     <!-- 5강 -->
-    <div class ="alert-box" id ="alert">
+    <!-- <div class ="alert-box" id ="alert">
         <p id="title">Alert 박스</p>
     <button id ="close" onclick="push('none')">닫기</button>
     </div>
     <button onclick="push('아이디 입력하세요')">버튼1</button>
-    <button onclick="push('패스워드 입력하세요')">버튼2</button>
+    <button onclick="push('패스워드 입력하세요')">버튼2</button> -->
 
+    <!-- 6강 -->
+    <h4 id="test">안녕하세요</h4>
+
+    <!-- jQuery의 script가 사용하는 script보다 위에 있어야 적용이 됨 -->
+    <script src="jquery-3.6.0.js"></script>
     <script>
         // 1강
         // document.getElementById('hello').innerHTML = '안녕';
@@ -41,16 +46,19 @@
         // }
 
         // 5강 EventListener 
-            function push(e){
-                const text = document.querySelector('.alert-box :first-child')
-                document.querySelector('.alert-box').style.display = "block";
-                text.innerHTML = e;
-            }
+        //     function push(e){
+        //         const text = document.querySelector('.alert-box :first-child')
+        //         document.querySelector('.alert-box').style.display = "block";
+        //         text.innerHTML = e;
+        //     }
 
-            document.getElementById('close').addEventListener('click',function(){
-            document.getElementById('alert').style.display = "none";
-        });
+        //     document.getElementById('close').addEventListener('click',function(){
+        //     document.getElementById('alert').style.display = "none";
+        // });
 
+        // 6강 jQuery (js를 짧게 해줄 수 있는 기능 라이브러리라고 부르기도 함)
+        $('#test').html('안녕');
+        $('#test').addClass('yellow-bg');
 
     </script>
 
@@ -136,4 +144,37 @@
         .addEventListenner의 .을 기준으로 왼쪽이 요소, 즉 이벤트가 부여될 요소
         괄호의 click는 이벤트 명, function()는 함수명 {}안에 들어가는 내용은
         실행시킬 내용 즉 함수안의 내용이라고 봐도 됨 (함수를 따로 만들면 함수명만 써도 됨)
+
+        querySelector 로 여러개의 아이디나 클래스를 찾을 시 All을 붙여주고 뒤에
+        몇번째를 선택하는지 [0]과 같은 배열값을 넣어줘야 함
+        querySelector은 기본적으로 첫번째(최상위) 값을 선택해줌
+
+    6. jQuery 기초
+        jquery를 jquery를 다운받아서 작업하는 폴더에 넣어주면 됨
+        다른 방법으로는
+        jquery cdn으로 검색해서 코드 복사해서 html파일에 넣어주면 됨
+        
+        파일명
+        uncompressed 버전은 원본 파일
+        minified 버전은 공백을 제거한 파일
+        slim 버전은 코드 몇 빠진 라이트버전
+
+        코드위치
+        head가 아닌 body의 끝나기 전 부분에 넣어주는것이 좋음
+
+        예시
+        document.querySelector('');
+        위 코드는 $(''); 와 같은 역할을 한다
+        추가로 jQuery의 방식의 method를 사용해줘야 함
+        $('#test').html('안녕');
+        의 경우는 querySelector로 #test를 찾아 그 안에 html내용은 안녕으로 바꿔주는 것
+        (.html은 안에있는 html요소 모두이고 .text는 안에있는 text요소 모두를 의미함)
+        요소 변경이 아니라 출력만 해주고싶다면 괄호를 비워두면 된다
+        
+        (.css는 스타일 속성을 바꾸는걸 의미함)
+        .css('color', 'red') 하면 컬러를 red로 바꾼다는 의미
+
+        .attr('src','dsddd')
+        속성의 이름과 속성을 바꿀 수 있음
+
 -->
